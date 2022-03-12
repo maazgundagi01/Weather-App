@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<SavedLocations />} />
         <Route path='/weather' element={<WeatherData />} /> //Replace /weather weather with /:location once it's setup.
-        <Rount path='search' element={<Search />} />
+        <Route path='search' element={<Search />} />
         <Route path='*' element={<Status404 />} />
       </Routes>
       <Footer />
