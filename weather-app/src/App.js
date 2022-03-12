@@ -1,14 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Header from 'header/Header.js';
-import WeatherData from 'weather-data/WeatherData.js';
-import Footer from 'footer/Footer.js';
+import Header from 'header/Header';
+import WeatherData from 'weather-data/WeatherData';
+import SavedLocations from 'saved-locations/SavedLocations'
+import Search from 'search/Search'
+import Status404 from 'status/Status';
+import Footer from 'footer/Footer';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 
 function App() {
   return (
-    <>
-
-    </>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path='/' element={<SavedLocations />} />
+        <Route path='/weather' element={<WeatherData />} /> //Replace /weather weather with /:location once it's setup.
+        <Rount path='search' element={<Search />} />
+        <Route path='*' element={<Status404 />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
