@@ -4,10 +4,15 @@ function Selector() {
     return (
         <>
             <div>
-                <h2>Search</h2>
-                <h4>Search for a city or airport</h4>
-                <label htmlFor="searcher" ></label>
-                <input name="searcher" type="text" placeholder="Search a location" />
+                <div className='p-t-container'>
+                    <h2 className='page-title'>Search</h2>
+                    <h4 className='page-subtitle'>Search for a city or airport</h4>
+                    <form className='searcher'>
+                        <label htmlFor="s-l" ></label>
+                        <input class="s-in" name="searcher" type="text" />
+                        <button class="s-btn">Go</button>
+                    </form>
+                </div>
             </div>
         </>
     )

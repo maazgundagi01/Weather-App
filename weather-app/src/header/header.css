@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
 *{
     box-sizing: border-box;
     margin: 0%;
     padding: 0%;
     font-family: 'Montserrat', sans-serif;
     color: rgb(255, 255, 255);
-    text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.777);
     font-size: 1.05rem;
 }
 body{
-    background-image:url(./pexels-markus-spiske-144352.jpg);
+    /* background-image:url(./pexels-elia-clerici-912110.jpg); */
+   background: #2193b0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #76b9ed, rgb(134, 205, 235),#2185b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     background-size:auto;
-    background-position-y: -20rem ;
+    background-position-y: -50rem ;
 
 }
 nav{
@@ -25,6 +29,8 @@ nav{
 }
 h1{
     font-size:3rem;
+    text-shadow: 2px 1px 2px rgba(0, 0, 0, 0.777);
+
 }
 h2{
     font-size: 1.8rem;
@@ -37,13 +43,27 @@ ul{
 }
 .h-b{
     background-image:url(./pexels-markus-spiske-144352.jpg);
-    height: 25rem;
+    height: 23rem;
     background-position: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5rem 3rem 5rem;
+}
+.h-b-c{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 .h-b-c-l-st{
     font-size:1.4rem;
-    color: gray;
+    color: rgb(0, 0, 0);
+    font-family: 'Merriweather', serif;
+}
+.h-b-c-t-st{
+    font-size:1.4rem;
+    color: rgb(0, 0, 0);
+    font-family: 'Merriweather', serif;
 }
 li{
     list-style: none;

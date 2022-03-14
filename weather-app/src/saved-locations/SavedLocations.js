@@ -5,9 +5,10 @@ function SavedLocations() {
     return (
         <div className='content-parent'>
             <div className='content-child'>
-
-                <h2>Saved Locations</h2>
-                <h4>Select a location to view weather</h4>
+                <div className="p-t-container">
+                    <h2 className='page-title'>Saved Locations</h2>
+                    <h4 className='page-subtitle'>Select a location to view weather</h4>
+                </div>
                 {/* //Table Just for styling purposes.
             //Replace with...code...yep */}
 
