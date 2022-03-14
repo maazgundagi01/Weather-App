@@ -17,10 +17,10 @@ export default function WeatherData() {
 
         // Fetch the data from WeatherAPI
         fetch(apiUrl)
-            .then(function(receivedData) {
+            .then(function (receivedData) {
                 return receivedData.json();
             })
-            .then(function(receivedData) {
+            .then(function (receivedData) {
                 setData(() => ({
                     ...receivedData
                 }));
@@ -33,7 +33,7 @@ export default function WeatherData() {
     useEffect(() => {
         fetchData();
     }, []);
-    
+
 
 
 
@@ -60,10 +60,10 @@ export default function WeatherData() {
                         const currentDate = new Date();
 
                         if (i >= currentDate.getHours()) {
-                            return(
+                            return (
                                 <div className="hourly-forecast-hour">
                                     <p>{(i > 12) ? i - 12 : i}</p>
-                                    <img src={el.condition.icon}/>
+                                    <img src={el.condition.icon} />
                                     <p>{Math.floor(el.temp_c)}&#176;</p>
                                 </div>
                             );
@@ -79,10 +79,10 @@ export default function WeatherData() {
                 {/* 3 Day Forecast */}
                 {
                     data.forecast.forecastday.map((el, i) => {
-                        return(
+                        return (
                             <div className="3-day-forecast-day">
                                 <h3>{(i === 0) ? "Today" : el.date}</h3>
-                                <img src={el.day.condition.icon}/>
+                                <img src={el.day.condition.icon} />
                                 <p>H:{Math.floor(el.day.maxtemp_c)}&#176; L:{Math.floor(el.day.mintemp_c)}&#176;</p>
                             </div>
                         );
