@@ -4,8 +4,10 @@ function Selector() {
     return (
         <>
             <div>
-                <label htmlFor="searcher" placeholder="Search a location"></label>
-                <input name="searcher" type="text" />
+                <h2>Search</h2>
+                <h4>Search for a city or airport</h4>
+                <label htmlFor="searcher" ></label>
+                <input name="searcher" type="text" placeholder="Search a location" />
             </div>
         </>
     )
