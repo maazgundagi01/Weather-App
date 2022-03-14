@@ -1,8 +1,9 @@
 import React from 'react'
 
 function SavedLocations() {
+
     return (
-        <div>SavedLocations</div>
+        <h1>locations</h1>
     )
 }
 

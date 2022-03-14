@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import "./weather-data.css";
 import Axios from "axios";
-
+import { useNavigate, useParams, NavLink } from "react-router-dom";
 export default function WeatherData() {
+    let { location } = useParams();
+
     const [data, setData] = useState({});
     const API_KEY = "e0e6ec95877448169b3215704221203";
 
@@ -36,7 +38,9 @@ export default function WeatherData() {
 
 
     return (
+
         <section id="weather-data">
+            <h1>{location}</h1>
             <div id="current-conditions">
                 <img src={data.current.condition.icon} />
                 <h1>{data.location.name}</h1>

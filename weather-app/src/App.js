@@ -13,7 +13,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<SavedLocations />} />
-        <Route path='/weather' element={<WeatherData />} /> //Replace /weather with /:location once it's setup.
+        <Route path='/:location' element={<WeatherData />} /> //Replace /weather with /:location once it's setup.
         <Route path='search' element={<Search />} />
         <Route path='*' element={<Status404 />} />
       </Routes>
