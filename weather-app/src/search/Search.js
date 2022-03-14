@@ -1,8 +1,10 @@
 import React from 'react'
 import Selector from './Selector'
+import './search.css'
 function Search() {
     return (
-        <div>
+        <div className='content-parent'>
+            <div className="content-child">
             <Selector />
             <table className='data-table search-table'>
                 <tr className='data-tr head-tr'>
@@ -29,7 +31,8 @@ function Search() {
                     <td>Indonasian Volcano</td>
                     <td>100'C</td>
                 </tr>
-            </table>
+                </table>
+            </div>
         </div>
     )
 }
