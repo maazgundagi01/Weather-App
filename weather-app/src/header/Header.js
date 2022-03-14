@@ -1,12 +1,15 @@
 import React from 'react'
+import './header.css'
 function Header() {
   return (
     <nav>
-      <h3>Weather App</h3>
+      <h2>Weather App</h2>
       <div>
-        <a href="">home</a>
-        <a href="">search</a>
-        <a href="">bookmarks</a>
+        <ul>
+          <li href="">home</li>
+          <li href="">search</li>
+          <li href="">bookmarks</li>
+        </ul>
       </div>
     </nav>
   )

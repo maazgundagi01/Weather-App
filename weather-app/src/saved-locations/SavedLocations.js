@@ -23,6 +23,14 @@ function SavedLocations() {
                     <td>Tokyo, Japan</td>
                     <td>0'C</td>
                 </tr>
+                <tr>
+                    <td>South Pole, Antartica</td>
+                    <td>-100'C</td>
+                </tr>
+                <tr>
+                    <td>Indonasian Volcano</td>
+                    <td>100'C</td>
+                </tr>
             </table>
         </div>
     )
