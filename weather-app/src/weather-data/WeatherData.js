@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import "./weather-data.css";
 import Axios from "axios";
 
 export default function WeatherData() {
+    const location = useParams().location;
+    console.log(location);
     const [data, setData] = useState({});
     const API_KEY = "e0e6ec95877448169b3215704221203";
 
@@ -11,7 +14,7 @@ export default function WeatherData() {
         // used for saved locations
         // const response = await Axios("api-url");
         // setData(response.data);
-        const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=London&days=10&aqi=no&alerts=no`;
+        const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=3&aqi=no&alerts=no`;
 
         // Fetch the data from WeatherAPI
         fetch(apiUrl)
