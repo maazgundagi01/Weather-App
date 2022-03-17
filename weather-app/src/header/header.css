@@ -57,12 +57,12 @@ ul{
 }
 .h-b-c-l-st{
     font-size:1.4rem;
-    color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.831);
     font-family: 'Merriweather', serif;
 }
 .h-b-c-t-st{
     font-size:1.4rem;
-    color: rgb(0, 0, 0);
+    color: rgba(255, 255, 255, 0.818);
     font-family: 'Merriweather', serif;
 }
 li{
