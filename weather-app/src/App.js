@@ -13,7 +13,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<SavedLocations />} />
-        <Route path='/location/:location' element={<WeatherData />} />
+        <Route path='/location/:location' element={<WeatherData />}></Route>
         <Route path='search' element={<Search />} />
         <Route path='*' element={<Status404 />} />
       </Routes>
