@@ -140,6 +140,8 @@ function WeatherData() {
                 <p>H:{Math.floor(data.forecast.forecastday[0].day.maxtemp_c)}&#176; L:{Math.floor(data.forecast.forecastday[0].day.mintemp_c)}&#176;</p>
             </div>
 
+            <button id="favourite">&#9733; Save as favourite</button>
+
             <div className="forecast-block">
                 <h2>Rest of the day</h2>
 
