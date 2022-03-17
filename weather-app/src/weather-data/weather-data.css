@@ -1,0 +1,82 @@
+#weather-data {
+    text-align: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed !important;
+    padding-bottom: 100px;
+}
+#current-icon {
+    width: 100px;
+}
+#current-conditions {
+    background-position: center center;
+    background-attachment: fixed;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+#current-conditions h1 {
+    margin-top: 0;
+}
+#temperature {
+    font-size: 7rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+h1 {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin: 0 0 10px 0;
+}
+h3 {
+    margin: 0 0 10px 0;
+}
+#temperature-container {
+    margin: 40px 0 30px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.inner-temp-container {
+    margin: 0 40px;
+}
+
+.forecast-multiple {
+    display: flex;
+    justify-content: space-evenly;
+    width: max-content;
+    margin: 0 auto;
+    max-width: 90%;
+    flex-wrap: wrap;
+}
+.forecast-multiple .forecast-block { margin: 0 30px; }
+.forecast-block {
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    width: max-content;
+    max-width: 90%;
+    padding: 30px;
+    margin: 30px auto;
+}
+.forecast-block h2 {
+    margin-bottom: 30px;
+}
+.forecast-inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.forecast-unit-block {
+    margin: 10px 10px;
+}
+
+#wind-direction, #humidity {
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 545px) {
+    #humidity-block {
+        margin-top: 30px;
+    }
+}

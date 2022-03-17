@@ -1,3 +1,4 @@
+import "./normalize.css";
 import Header from './header/Header';
 import WeatherData from './weather-data/WeatherData';
 import SavedLocations from './saved-locations/SavedLocations'
