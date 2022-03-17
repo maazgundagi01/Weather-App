@@ -10,15 +10,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 function App() {
   return (
     <Router>
-      <Header/>
+      <Header />
       <Routes>
         <Route path='/' element={<SavedLocations />} />
         <Route path='/location/:location' element={<WeatherData />}></Route>
-        <Route path='search' element={<Search />} />
+        <Route path='/search' element={<Search />} />
         <Route path='*' element={<Status404 />} />
-      </Routes>
-      <Footer/>
-    </Router>
+      </Routes >
+      <Footer />
+    </Router >
   );
 }
 

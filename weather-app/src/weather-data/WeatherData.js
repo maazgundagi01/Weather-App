@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, Component } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams, NavLink } from "react-router-dom";
 import "./weather-data.css";
 import blizzard from '../img/blizzard.jpg';
 import cloudy from '../img/cloudy.jpg';
@@ -117,7 +117,9 @@ function WeatherData() {
 
 
     return (
+
         <section id="weather-data">
+            <h1>{location}</h1>
             <div id="current-conditions">
                 <img src={data.current.condition.icon} />
                 <h1>{data.location.name}</h1>
@@ -137,10 +139,10 @@ function WeatherData() {
                         const currentDate = new Date();
 
                         if (i >= currentDate.getHours()) {
-                            return(
+                            return (
                                 <div className="hourly-forecast-hour">
                                     <p>{(i > 12) ? i - 12 : i}</p>
-                                    <img src={el.condition.icon}/>
+                                    <img src={el.condition.icon} />
                                     <p>{Math.floor(el.temp_c)}&#176;</p>
                                 </div>
                             );
@@ -156,10 +158,10 @@ function WeatherData() {
                 {/* 3 Day Forecast */}
                 {
                     data.forecast.forecastday.map((el, i) => {
-                        return(
+                        return (
                             <div className="3-day-forecast-day">
                                 <h3>{(i === 0) ? "Today" : el.date}</h3>
-                                <img src={el.day.condition.icon}/>
+                                <img src={el.day.condition.icon} />
                                 <p>H:{Math.floor(el.day.maxtemp_c)}&#176; L:{Math.floor(el.day.mintemp_c)}&#176;</p>
                             </div>
                         );
