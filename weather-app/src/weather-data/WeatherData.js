@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef, Component } from 'react';
-import { useNavigate, useParams, NavLink } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
 import "./weather-data.css";
 import blizzard from '../img/blizzard.jpg';
 import cloudy from '../img/cloudy.jpg';
@@ -14,7 +14,7 @@ import sleet from '../img/sleet.jpg';
 import snow from '../img/snow.jpg';
 import stormy from '../img/stormy.jpg';
 import sunny from '../img/sunny.jpg';
-import Axios from "axios";
+import SavedLocations from '../saved-locations/SavedLocations';
 
 function WeatherData() {
 
@@ -65,7 +65,7 @@ function WeatherData() {
             });
     };
     useEffect(() => {
-        fetchData();
+        fetchData()
     }, []);
     useEffect(() => {
         // Change background image depending on weather conditions
@@ -114,9 +114,31 @@ function WeatherData() {
                 break;
         } 
         document.getElementById("current-conditions").style.backgroundImage = currentConditionsBackground;
+
+        // set the state of the favourited button
+        var savedLocations = JSON.parse(localStorage.getItem("saved-locations") || "[]");
+        if (savedLocations) {
+            if (savedLocations.includes(data.location.name)) {
+                document.getElementById("favourite").innerHTML = "Favourited!";
+            }
+        }
     });
     
+    function saveToLocalStorage() {
+        let savedLocations = JSON.parse(localStorage.getItem("saved-locations") || "[]");
+        console.log(localStorage.getItem("saved-locations"));
 
+        if (savedLocations.includes(data.location.name)) {
+            savedLocations = savedLocations.filter(function(el) {
+                return el != data.location.name;
+            });
+            document.getElementById("favourite").innerHTML = "&#9733; Save as favourite";
+        } else {
+            savedLocations.push(data.location.name);
+            document.getElementById("favourite").innerHTML = "Favourited!";
+        }
+        localStorage.setItem("saved-locations", JSON.stringify(savedLocations));
+    }
 
     return (
         <section id="weather-data">
@@ -140,7 +162,7 @@ function WeatherData() {
                 <p>H:{Math.floor(data.forecast.forecastday[0].day.maxtemp_c)}&#176; L:{Math.floor(data.forecast.forecastday[0].day.mintemp_c)}&#176;</p>
             </div>
 
-            <button id="favourite">&#9733; Save as favourite</button>
+            <button id="favourite" onClick={saveToLocalStorage}>&#9733; Save as favourite</button>
 
             <div className="forecast-block">
                 <h2>Rest of the day</h2>
