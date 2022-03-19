@@ -16,6 +16,8 @@
 }
 .s-btn{
     height: 2rem;
+    width: 6rem;
+    cursor: pointer;
     border: none;
     padding: 0 1rem 0.2rem 1rem;
     margin: 0 0.5rem;
