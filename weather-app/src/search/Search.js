@@ -21,7 +21,7 @@ function Search() {
                     <h4 className='page-subtitle'>Search for a city or airport</h4>
                     <div className='searcher'>
                         <label htmlFor="s-l" ></label>
-                        <input type="text" className='s-in' placeholder='search location' onKeyDown={displayer} onLoad={displayer} value={input} />
+                        <input type="text" className='s-in' placeholder='search location' onChange={displayer} onLoad={displayer} value={input} />
                     </div>
                 </div>
             <table className='data-table search-table'>
