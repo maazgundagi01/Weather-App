@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import data from './data.json'
 import './search.css'
 function Search() {
+    let navigate = useNavigate();
     const [input, setInput] = useState("")
+
     const displayer = (e) => {
         e.preventDefault()
         setInput(e.target.value);
@@ -12,6 +15,9 @@ function Search() {
             return i.name.match(input.charAt(0).toUpperCase() + input.slice(1));
         })
     }
+
+
+
     return (
         <div className='content-parent'>
             <div className="content-child">
@@ -28,20 +34,21 @@ function Search() {
                 <tr className='data-tr head-tr'>
                         <th>City</th>
                         <th>Country</th>
+                        <th>Weather</th>
                 </tr>
                     {data.map((entry, lat) => {
                         return (<>
                             <tr key={lat} className='data-tr head-tr'>
-                                <td>{entry.name}</td>
+                                <td >{entry.name}</td>
                                 <td>{entry.country}</td>
-                                <button></button>
+                                <td><button onClick={() => { navigate(`/location/${entry.name}`) }} className='s-btn'> Go </button></td>
+
                             </tr>
                         </>);
                     })}
                 </table>
             </div>
         </div>
-
     )
 }
 
