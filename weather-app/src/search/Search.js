@@ -31,21 +31,25 @@ function Search() {
                     </div>
                 </div>
             <table className='data-table search-table'>
-                <tr className='data-tr head-tr'>
+                <thead>
+                    <tr className='data-tr head-tr'>
                         <th>City</th>
                         <th>Country</th>
                         <th>Weather</th>
-                </tr>
+                    </tr>
+                </thead>
+                <tbody>
                     {data.map((entry, lat) => {
                         return (<>
                             <tr key={lat} className='data-tr head-tr'>
-                                <td >{entry.name}</td>
+                                <td>{entry.name}</td>
                                 <td>{entry.country}</td>
                                 <td><button onClick={() => { navigate(`/location/${entry.name}`) }} className='s-btn'> Go </button></td>
 
                             </tr>
                         </>);
                     })}
+                </tbody>
                 </table>
             </div>
         </div>
