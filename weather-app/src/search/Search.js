@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import data from './data.json'
 import './search.css'
 function Search() {
+    let results = data;
     let navigate = useNavigate();
     const [input, setInput] = useState("")
     const displayer = (e) => {
@@ -10,7 +11,10 @@ function Search() {
         setInput(e.target.value);
     };
     const displayer2 = (e) => {
-        setInput(e.target.value);
+        if (e.keyCode === 8) {
+            console.log(e.target.value);
+            setInput(e.target.value);
+        }
     };
 
     if (input.length > 0) {
@@ -21,19 +25,13 @@ function Search() {
         //     const element = trArray[index];
         //     element.style.display = 'block'
         // }
-        data = data.filter((i) => {
+        results = data.filter((i) => {
             return i.name.match(input.charAt(0).toUpperCase() + input.slice(1));
-        })
+        });
+    } else {
+        document.querySelector('table').style.display = "none";
     }
-    window.addEventListener('DOMContentLoaded', (event) => {
-        // let trArray = document.querySelectorAll('tr')
-
-        // for (let index = 0; index < trArray.length; index++) {
-        //     const element = trArray[index];
-        //     element.style.display = 'none'
-        // }
-        document.querySelector('table').style.display = "none"
-    });
+    
     return (
         <div className='content-parent'>
             <div className="content-child">
@@ -42,7 +40,7 @@ function Search() {
                     <h4 className='page-subtitle'>Search for a city or airport</h4>
                     <div className='searcher'>
                         <label htmlFor="s-l" ></label>
-                        <input type="text" className='s-in' placeholder='search location' onChange={displayer} onKeyDown={displayer2} value={input} />
+                        <input type="text" className='s-in' placeholder='search location' onChange={displayer} value={input} />
 
                     </div>
                 </div>
@@ -55,7 +53,7 @@ function Search() {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map((entry, lat) => {
+                    {results.map((entry, lat) => {
                         return (<>
                             <tr key={lat} className='data-tr head-tr'>
                                 <td>{entry.name}</td>
