@@ -46,11 +46,6 @@ function WeatherData() {
     const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${LOCATION}&days=3&aqi=no&alerts=no`;
 
     const fetchData = () => {
-        // get information from local database
-        // used for saved locations
-        // const response = await Axios("api-url");
-        // setData(response.data);
-
         // Fetch the data from WeatherAPI
         fetch(API_URL)
             .then(function(receivedData) {
@@ -66,6 +61,7 @@ function WeatherData() {
     };
     useEffect(() => {
         fetchData()
+        // localStorage.setItem("saved-locations", JSON.stringify([]));
     }, []);
     useEffect(() => {
         // Change background image depending on weather conditions
@@ -118,25 +114,39 @@ function WeatherData() {
         // set the state of the favourited button
         var savedLocations = JSON.parse(localStorage.getItem("saved-locations") || "[]");
         if (savedLocations) {
-            if (savedLocations.includes(data.location.name)) {
-                document.getElementById("favourite").innerHTML = "Favourited!";
-            }
+            savedLocations.map((el) => {
+                if (el.includes(data.location.name) && el.includes(data.location.country)) {
+                    document.getElementById("favourite").innerHTML = "Favourited!";
+                }
+            });
         }
     });
     
     function saveToLocalStorage() {
         let savedLocations = JSON.parse(localStorage.getItem("saved-locations") || "[]");
-        console.log(localStorage.getItem("saved-locations"));
+        console.log("Saved locations: ");
+        console.log(savedLocations);
 
-        if (savedLocations.includes(data.location.name)) {
-            savedLocations = savedLocations.filter(function(el) {
-                return el != data.location.name;
+        if (savedLocations.length > 0) {
+            savedLocations.map((el) => {
+                // if already contained in local storage, remove
+                if (el.includes(data.location.name) && el.includes(data.location.country)) {
+                    savedLocations = savedLocations.filter(function(arr) {
+                        return !(arr.includes(data.location.name) && arr.includes(data.location.country));
+                    });
+                    document.getElementById("favourite").innerHTML = "&#9733; Save as favourite";
+                    console.log("Removed from favourites");
+                } else { // if not contained in local storage, add
+                    savedLocations.push([data.location.name, data.location.country]);
+                    document.getElementById("favourite").innerHTML = "Favourited!";
+                    console.log("Added to favourites");
+                }
             });
-            document.getElementById("favourite").innerHTML = "&#9733; Save as favourite";
         } else {
-            savedLocations.push(data.location.name);
+            savedLocations.push([data.location.name, data.location.country]);
             document.getElementById("favourite").innerHTML = "Favourited!";
         }
+
         localStorage.setItem("saved-locations", JSON.stringify(savedLocations));
     }
 

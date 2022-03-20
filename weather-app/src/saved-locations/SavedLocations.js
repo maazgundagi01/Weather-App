@@ -1,6 +1,16 @@
 import React from 'react'
 import './saved-locations.css'
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 function SavedLocations() {
+
+    let navigate = useNavigate();
+    let savedLocations = [];
+    savedLocations = JSON.parse(localStorage.getItem("saved-locations") || "[]");
+
+    function handleNavigation(linkURL) {
+        navigate(linkURL);
+    }
 
     return (
         <div className='content-parent'>
@@ -9,43 +19,29 @@ function SavedLocations() {
                     <h2 className='page-title'>Saved Locations</h2>
                     <h4 className='page-subtitle'>Select a location to view weather</h4>
                 </div>
-                {/* //Table Just for styling purposes.
-            //Replace with...code...yep */}
-
                 <table className='data-table locations-table'>
-                    <tr className='data-tr head-tr'>
-                        <th>Locations</th>
-                        <th>Temperature</th>
-                    </tr>
-                    <tr className='data-tr'>
-                        <td>Winnipeg, Canada</td>
-                        <td>-50'C</td>
-                    </tr>
-                    <tr className='data-tr'>
-                        <td>Sahara Desert, Africa?</td>
-                        <td>50'C</td>
-                    </tr>
-                    <tr className='data-tr'>
-                        <td>Tokyo, Japan</td>
-                        <td>0'C</td>
-                    </tr>
-                    <tr className='data-tr'>
-                        <td>South Pole, Antartica</td>
-                        <td>-100'C</td>
-                    </tr>
-                    <tr className='data-tr'>
-                        <td>Indonasian Volcano</td>
-                        <td>100'C</td>
-                    </tr>
-                    <tr className='data-tr'>
-                        <td>Indonasian Volcano</td>
-                        <td>100'C</td>
-                    </tr>
-                    <tr className='data-tr'>
-                        <td>Indonasian Volcano</td>
-                        <td>100'C</td>
-                    </tr>
-
+                    <thead>
+                        <tr className='data-tr head-tr'>
+                            <th>City</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        savedLocations.map((el, index) => {
+                            var country = el[1].replace(/\s/g, "");
+                            return(
+                                <tr key={el[0]} className='data-tr'>
+                                    <td>{el[0]}</td>
+                                    <td>{el[1]}</td>
+                                    <td>
+                                    <button onClick={() => { navigate(`/location/${el[0]},${country}`) }} className='s-btn'> Go </button>
+                                    </td>
+                                </tr>
+                            );
+                        })
+                    }
+                    </tbody>
                 </table>
             </div>
         </div>

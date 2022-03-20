@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './header.css'
 function Header() {
   return (
@@ -7,9 +8,12 @@ function Header() {
       <h2>Weather App</h2>
       <div>
         <ul>
-          <li href="">home</li>
-          <li href="">search</li>
-          <li href="">bookmarks</li>
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <Link to='/search'>Search</Link>
+          </li>
         </ul>
       </div>
       </nav>
