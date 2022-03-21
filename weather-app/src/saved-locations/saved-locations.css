@@ -1,5 +1,5 @@
 .content-child{
-    background-color: rgba(255, 255, 255, 0.578);
+    background-color: rgba(255, 255, 255, 0.263);
     padding: 2.3rem 5rem;
     border-radius: 0.6rem;
     /* border: 1px rgba(0, 0, 0, 0.249) solid;
@@ -7,11 +7,11 @@
 }
 .p-t-container{
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.735);
+    background-color: rgba(255, 255, 255, 0.797);
     padding: 1rem 1rem;
     margin: 0 0 1rem 0;
     /* border: 1px rgba(0, 0, 0, 0.242) solid; */
-    box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.194);
+    box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.05);
     border-radius: 5px;
 }
 .page-title{
@@ -33,7 +33,7 @@
     
 }
 tbody{
-    width: 100%;
+    width: 100% !important;
 }
 .data-tr{
     height: 3rem;

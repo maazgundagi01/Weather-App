@@ -10,9 +10,12 @@
     margin: auto;
 }
 .s-in{
+    margin-top: 1rem;
     height: 2rem;
     border: 1px rgba(0, 0, 0, 0.345) solid;
     border-radius: 6px;
+    padding-left: 0.5rem;
+    width: 30rem;
 }
 .s-btn{
     height: 2rem;

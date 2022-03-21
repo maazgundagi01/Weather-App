@@ -12,7 +12,7 @@ body{
     /* background-image:url(./pexels-elia-clerici-912110.jpg); */
    background: #2193b0;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #76b9ed, rgb(134, 205, 235),#2185b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #76b9ed, rgb(79, 193, 242),#2185b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     background-size:auto;
     background-position-y: -50rem ;
