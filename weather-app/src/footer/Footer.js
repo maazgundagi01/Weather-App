@@ -16,7 +16,7 @@ export default class Footer extends Component {
         return (
             <footer>
                 <h4>Copyright 2022, The Conglomerate 2.0 && The Indian Conglomerate </h4>
-        </footer>
-        )
+            </footer>
+        );
     }
 }

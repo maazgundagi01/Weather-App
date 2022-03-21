@@ -1,16 +1,12 @@
 import React from 'react'
 import './saved-locations.css'
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+
 function SavedLocations() {
 
     let navigate = useNavigate();
     let savedLocations = [];
     savedLocations = JSON.parse(localStorage.getItem("saved-locations") || "[]");
-
-    function handleNavigation(linkURL) {
-        navigate(linkURL);
-    }
 
     return (
         <div className='content-parent'>
