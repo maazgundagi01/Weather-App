@@ -10,12 +10,6 @@ function Search() {
         e.preventDefault()
         setInput(e.target.value);
     };
-    const displayer2 = (e) => {
-        if (e.keyCode === 8) {
-            console.log(e.target.value);
-            setInput(e.target.value);
-        }
-    };
 
     if (input.length > 0) {
         document.querySelector('table').style.display = "block"

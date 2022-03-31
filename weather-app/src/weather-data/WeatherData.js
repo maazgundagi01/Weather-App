@@ -14,7 +14,6 @@ import sleet from '../img/sleet.jpg';
 import snow from '../img/snow.jpg';
 import stormy from '../img/stormy.jpg';
 import sunny from '../img/sunny.jpg';
-import SavedLocations from '../saved-locations/SavedLocations';
 
 function WeatherData() {
 
