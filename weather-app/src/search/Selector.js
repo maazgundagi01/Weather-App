@@ -1,5 +1,4 @@
 import React from 'react'
-
 function Selector() {
     return (
         <>
@@ -17,5 +16,4 @@ function Selector() {
         </>
     )
 }
-
 export default Selector
